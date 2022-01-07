@@ -1,0 +1,7 @@
+# This file contains build requirements that get picked up but are
+# undesirable. One entry per line, no whitespace.
+pypi(markdown2)
+pypi(sphinx)
+pypi(sphinx_issues)
+pypi(sphinx_removed_in)
+pypi(sphinxext_opengraph)
