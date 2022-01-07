@@ -4,7 +4,7 @@
 #
 Name     : pypi-pillow
 Version  : 8.4.0
-Release  : 86
+Release  : 87
 URL      : https://files.pythonhosted.org/packages/7d/2a/2fc11b54e2742db06297f7fa7f420a0e3069fdcf0e4b57dfec33f0b08622/Pillow-8.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7d/2a/2fc11b54e2742db06297f7fa7f420a0e3069fdcf0e4b57dfec33f0b08622/Pillow-8.4.0.tar.gz
 Summary  : Python Imaging Library (Fork)
@@ -28,6 +28,9 @@ BuildRequires : pypi(pyroma)
 BuildRequires : pypi(sphinx_copybutton)
 BuildRequires : pypi(sphinx_rtd_theme)
 Patch1: 0001-Fix-build-Add-default-libdir.patch
+Provides: Pillow
+Provides: Pillow-python
+Provides: Pillow-python3
 
 %description
 <p align="center">
