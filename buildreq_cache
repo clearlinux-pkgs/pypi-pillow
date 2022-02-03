@@ -1,4 +1,4 @@
-9.0.0
+9.0.1
 pypi(black)
 pypi(check_manifest)
 pypi(coverage)
@@ -8,3 +8,4 @@ pypi(packaging)
 pypi(pyroma)
 pypi(sphinx_copybutton)
 pypi(sphinx_rtd_theme)
+zlib-dev
