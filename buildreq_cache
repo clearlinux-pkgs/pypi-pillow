@@ -1,11 +1,2 @@
-9.0.1
-pypi(black)
-pypi(check_manifest)
-pypi(coverage)
-pypi(defusedxml)
-pypi(olefile)
-pypi(packaging)
-pypi(pyroma)
-pypi(sphinx_copybutton)
-pypi(sphinx_rtd_theme)
+9.1.0
 zlib-dev
