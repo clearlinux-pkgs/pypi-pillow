@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pillow
-URL = https://files.pythonhosted.org/packages/43/6e/59853546226ee6200f9ba6e574d11604b60ad0754d2cbd1c8f3246b70418/Pillow-9.1.1.tar.gz
+URL = https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
