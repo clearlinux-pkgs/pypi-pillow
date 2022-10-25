@@ -4,7 +4,7 @@
 #
 Name     : pypi-pillow
 Version  : 9.2.0
-Release  : 99
+Release  : 100
 URL      : https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/8c/92/2975b464d9926dc667020ed1abfa6276e68c3571dcb77e43347e15ee9eed/Pillow-9.2.0.tar.gz
 Summary  : Python Imaging Library (Fork)
