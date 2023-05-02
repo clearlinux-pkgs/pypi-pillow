@@ -5,14 +5,12 @@
 #
 Name     : pypi-pillow
 Version  : 9.5.0
-Release  : 104
+Release  : 105
 URL      : https://files.pythonhosted.org/packages/00/d5/4903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2d/Pillow-9.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/00/d5/4903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2d/Pillow-9.5.0.tar.gz
 Summary  : Python Imaging Library (Fork)
 Group    : Development/Tools
 License  : Apache-2.0 HPND MIT NTP OFL-1.0
-Requires: pypi-pillow-filemap = %{version}-%{release}
-Requires: pypi-pillow-lib = %{version}-%{release}
 Requires: pypi-pillow-license = %{version}-%{release}
 Requires: pypi-pillow-python = %{version}-%{release}
 Requires: pypi-pillow-python3 = %{version}-%{release}
@@ -29,24 +27,6 @@ Patch1: 0001-Fix-build-Add-default-libdir.patch
 <p align="center">
 <img width="248" height="250" src="https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-248x250.png" alt="Pillow logo">
 </p>
-
-%package filemap
-Summary: filemap components for the pypi-pillow package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-pillow package.
-
-
-%package lib
-Summary: lib components for the pypi-pillow package.
-Group: Libraries
-Requires: pypi-pillow-license = %{version}-%{release}
-Requires: pypi-pillow-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-pillow package.
-
 
 %package license
 Summary: license components for the pypi-pillow package.
@@ -68,7 +48,6 @@ python components for the pypi-pillow package.
 %package python3
 Summary: python3 components for the pypi-pillow package.
 Group: Default
-Requires: pypi-pillow-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(pillow)
 
@@ -89,12 +68,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680533286
+export SOURCE_DATE_EPOCH=1683042577
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -132,14 +111,6 @@ popd
 %files
 %defattr(-,root,root,-)
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-pillow
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-pillow/0e373369e12062eb1d6f4f3df0c41086f8320eb3
@@ -152,4 +123,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
