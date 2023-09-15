@@ -4,13 +4,13 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pillow
-Version  : 10.0.0
-Release  : 107
-URL      : https://files.pythonhosted.org/packages/0f/8b/2ebaf9adcf4260c00f842154865f8730cf745906aa5dd499141fb6063e26/Pillow-10.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/0f/8b/2ebaf9adcf4260c00f842154865f8730cf745906aa5dd499141fb6063e26/Pillow-10.0.0.tar.gz
+Version  : 10.0.1
+Release  : 108
+URL      : https://files.pythonhosted.org/packages/64/9e/7e638579cce7dc346632f020914141a164a872be813481f058883ee8d421/Pillow-10.0.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/64/9e/7e638579cce7dc346632f020914141a164a872be813481f058883ee8d421/Pillow-10.0.1.tar.gz
 Summary  : Python Imaging Library (Fork)
 Group    : Development/Tools
-License  : Apache-2.0 HPND NTP OFL-1.0
+License  : Apache-2.0 HPND MIT NTP OFL-1.0
 Requires: pypi-pillow-license = %{version}-%{release}
 Requires: pypi-pillow-python = %{version}-%{release}
 Requires: pypi-pillow-python3 = %{version}-%{release}
@@ -58,11 +58,11 @@ python3 components for the pypi-pillow package.
 
 
 %prep
-%setup -q -n Pillow-10.0.0
-cd %{_builddir}/Pillow-10.0.0
+%setup -q -n Pillow-10.0.1
+cd %{_builddir}/Pillow-10.0.1
 %patch -P 1 -p1
 pushd ..
-cp -a Pillow-10.0.0 buildavx2
+cp -a Pillow-10.0.1 buildavx2
 popd
 
 %build
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688411403
+export SOURCE_DATE_EPOCH=1694800043
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -95,6 +95,7 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pillow
 cp %{_builddir}/Pillow-%{version}/Tests/fonts/DejaVuSans/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pillow/3d95e2c3b731545390f6888a3214cf7b51fb7971 || :
 cp %{_builddir}/Pillow-%{version}/Tests/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pillow/5a20a10da0dd9e25c9581d944c81ae9c2b16b127 || :
 cp %{_builddir}/Pillow-%{version}/Tests/icc/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pillow/371117588643c602bb8f15b280424e938c34c369 || :
+cp %{_builddir}/Pillow-%{version}/src/thirdparty/raqm/COPYING %{buildroot}/usr/share/package-licenses/pypi-pillow/980792cb6c68c2cf5bb7181d40ec635a1195ed8a || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -117,6 +118,7 @@ popd
 /usr/share/package-licenses/pypi-pillow/371117588643c602bb8f15b280424e938c34c369
 /usr/share/package-licenses/pypi-pillow/3d95e2c3b731545390f6888a3214cf7b51fb7971
 /usr/share/package-licenses/pypi-pillow/5a20a10da0dd9e25c9581d944c81ae9c2b16b127
+/usr/share/package-licenses/pypi-pillow/980792cb6c68c2cf5bb7181d40ec635a1195ed8a
 
 %files python
 %defattr(-,root,root,-)
